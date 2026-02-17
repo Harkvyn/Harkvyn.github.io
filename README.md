@@ -1,108 +1,71 @@
-# 🔍 Fraud Investigator Portfolio
+# 🔍 Fraud Investigator Portfolio — Astro Version
 
-Website portfolio profesional untuk Fraud Investigator dengan modern dark theme, animasi interaktif menggunakan React, Tailwind CSS, dan Framer Motion.
+Portfolio modern dengan Astro + Tailwind CSS. Static build = deploy sempurna ke GitHub Pages tanpa masalah MIME type!
 
-## ✨ Fitur
+## 📁 Struktur Project
 
-- **Hero Section** dengan scramble text effect dan animated particles
-- **Bento Grid** untuk Skills & Tools dengan hover animations
-- **Timeline** vertikal dengan scroll-reveal animations
-- **Micro-interactions** di semua elemen interaktif
-- **Dark Mode** dengan cyber blue & crimson red accents
-- **Fully Responsive** untuk semua device
-
-## 🚀 Deploy ke GitHub Pages
-
-### Langkah 1: Setup Repository
-
-1. Buat repository baru di GitHub dengan nama: `Harkvyn.github.io`
-2. Clone repository ke komputer Anda:
-```bash
-git clone https://github.com/Harkvyn/Harkvyn.github.io.git
-cd Harkvyn.github.io
+```
+Harkvyn.github.io/
+├── src/
+│   ├── pages/
+│   │   └── index.astro      ← Halaman utama
+│   ├── layouts/
+│   │   └── Layout.astro     ← Base layout (nav, footer, cursor)
+│   └── styles/
+│       └── global.css       ← Global styles + animasi
+├── public/                  ← Static assets (gambar, favicon)
+├── astro.config.mjs         ← Konfigurasi Astro
+├── tailwind.config.mjs      ← Konfigurasi Tailwind
+├── package.json
+└── .gitignore
 ```
 
-### Langkah 2: Copy Files
+## 🚀 Setup & Deploy
 
-Copy semua file dari project ini ke folder repository yang sudah di-clone:
-- App.jsx
-- main.jsx
-- index.html
-- index.css
-- package.json
-- vite.config.js
-- tailwind.config.js
-- postcss.config.js
-- .gitignore
-
-### Langkah 3: Install Dependencies
-
+### 1. Install dependencies
 ```bash
 npm install
 ```
 
-### Langkah 4: Test Locally (Optional)
-
+### 2. Test di local
 ```bash
-npm start
+npm run dev
+# Buka: http://localhost:4321
 ```
-Buka browser di `http://localhost:5173`
 
-### Langkah 5: Deploy
-
+### 3. Build & Deploy ke GitHub Pages
 ```bash
 npm run deploy
 ```
 
 Perintah ini akan:
-1. Build project ke folder `dist`
-2. Push folder `dist` ke branch `gh-pages`
-3. GitHub Pages akan otomatis serve dari branch `gh-pages`
+1. `astro build` → generate folder `dist/` berisi HTML/CSS/JS murni
+2. `gh-pages -d dist` → push ke branch `gh-pages`
 
-### Langkah 6: Aktifkan GitHub Pages
+### 4. Aktifkan GitHub Pages
+1. GitHub repo → **Settings** → **Pages**
+2. Source: branch `gh-pages`, folder `/ (root)`
+3. Save → tunggu 1-2 menit
+4. Live di: **https://Harkvyn.github.io** ✅
 
-1. Buka repository di GitHub
-2. Go to **Settings** → **Pages**
-3. Di **Source**, pilih branch `gh-pages` dan folder `/ (root)`
-4. Click **Save**
-5. Website Anda akan live di: `https://Harkvyn.github.io`
+## ✨ Kenapa Astro?
 
-## 🔧 Development
+| | React + Vite | Astro |
+|---|---|---|
+| Output | JavaScript bundle | Static HTML murni |
+| MIME type error | ❌ Bisa terjadi | ✅ Tidak pernah |
+| Load speed | Sedang | Sangat cepat |
+| GitHub Pages | Perlu config | Langsung jalan |
+| SEO | Butuh setup | Built-in |
 
-```bash
-# Start development server
-npm start
+## 🎨 Fitur
 
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Deploy to GitHub Pages
-npm run deploy
-```
-
-## 📦 Tech Stack
-
-- **React 18** - UI Library
-- **Vite** - Build Tool
-- **Tailwind CSS** - Styling
-- **Framer Motion** - Animations
-- **GitHub Pages** - Hosting
-
-## 📝 Customization
-
-Edit file `App.jsx` untuk mengubah:
-- Informasi personal di Hero Section
-- Skills & tools di Bento Grid
-- Timeline experiences
-- Contact information
-
-## 📄 License
-
-MIT License - Feel free to use this template for your own portfolio!
-
----
-
-Built with ❤️ using React & Framer Motion
+- ✅ **Scramble text** effect di hero
+- ✅ **Animated particles** background
+- ✅ **Bento Grid** skills section
+- ✅ **Timeline** experience dengan reveal-on-scroll
+- ✅ **Custom cursor** dengan follower effect
+- ✅ **Scanline** CRT overlay
+- ✅ **Micro-interactions** di semua tombol
+- ✅ **Glow effects** cyber blue + crimson red
+- ✅ **100% Static** — no server needed

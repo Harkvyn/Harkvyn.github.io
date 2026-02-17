@@ -1,0 +1,373 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Fraud Investigator | Harkvyn Portfolio">
+
+  <!-- ═══ HERO SECTION ═══ -->
+  <section class="relative min-h-screen flex items-center justify-center grid-bg overflow-hidden">
+
+    <!-- Animated background particles -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      {Array.from({ length: 40 }).map((_, i) => (
+        <div
+          class="particle absolute w-px h-px bg-cyan-400 rounded-full"
+          style={`
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            animation: float ${6 + Math.random() * 8}s ease-in-out infinite;
+            animation-delay: ${Math.random() * 5}s;
+            opacity: ${0.2 + Math.random() * 0.5};
+            width: ${1 + Math.random() * 2}px;
+            height: ${1 + Math.random() * 2}px;
+          `}
+        />
+      ))}
+    </div>
+
+    <!-- Glowing orbs -->
+    <div class="absolute top-1/4 left-1/3 w-[500px] h-[500px] rounded-full blur-[120px] bg-cyan-500/10 pointer-events-none animate-pulse-slow"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full blur-[100px] bg-red-500/10 pointer-events-none animate-pulse-slow" style="animation-delay: 2s;"></div>
+
+    <!-- Scan line -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
+      <div class="w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scan"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+
+      <!-- Status badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 border border-cyan-500/30 bg-cyan-500/5 mb-8 text-xs tracking-[0.3em] text-cyan-400 uppercase">
+        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse inline-block"></span>
+        AVAILABLE FOR INVESTIGATION
+      </div>
+
+      <!-- Name -->
+      <h1 class="font-display font-black mb-4 leading-none">
+        <div class="text-2xl md:text-3xl text-cyan-400/60 tracking-[0.5em] mb-2 font-mono font-normal">
+          HARKVYN
+        </div>
+        <div
+          id="scramble-text"
+          class="text-5xl md:text-8xl text-white glow-blue tracking-tight"
+          data-text="FRAUD INVESTIGATOR"
+        >
+          FRAUD INVESTIGATOR
+        </div>
+      </h1>
+
+      <!-- Divider -->
+      <div class="flex items-center justify-center gap-4 my-8">
+        <div class="h-px w-24 bg-gradient-to-r from-transparent to-cyan-500"></div>
+        <div class="text-crimson-DEFAULT text-xl" style="color: #ff2244;">◈</div>
+        <div class="h-px w-24 bg-gradient-to-l from-transparent to-cyan-500"></div>
+      </div>
+
+      <!-- Tagline -->
+      <p class="text-lg md:text-xl text-cyan-400/70 mb-4 font-mono max-w-2xl mx-auto leading-relaxed">
+        Mengungkap kebenaran di balik data.
+      </p>
+      <p class="text-sm md:text-base text-slate-400 mb-12 max-w-xl mx-auto leading-relaxed">
+        Spesialis investigasi fraud digital, forensik keuangan,
+        dan deteksi anomali berbasis Machine Learning.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a
+          href="#skills"
+          class="btn-shimmer group px-8 py-4 bg-cyan-500 text-black font-display font-bold text-sm tracking-widest uppercase hover:bg-cyan-400 transition-all duration-300"
+        >
+          Lihat Skills
+        </a>
+        <a
+          href="#contact"
+          class="btn-shimmer group px-8 py-4 border border-cyan-500/50 text-cyan-400 font-display font-bold text-sm tracking-widest uppercase hover:border-cyan-400 hover:text-white transition-all duration-300"
+        >
+          Hubungi Saya
+        </a>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="mt-20 grid grid-cols-3 gap-px border border-cyan-500/10 bg-cyan-500/10 max-w-lg mx-auto">
+        {[
+          { value: '6+', label: 'Tahun Exp' },
+          { value: '200+', label: 'Kasus' },
+          { value: '$5M+', label: 'Fraud Detected' },
+        ].map(stat => (
+          <div class="bg-[#030a0e] py-4 px-2 text-center">
+            <div class="font-display text-2xl font-black text-cyan-400 glow-blue">{stat.value}</div>
+            <div class="text-xs text-slate-500 mt-1 tracking-widest uppercase">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-cyan-400/40 text-xs tracking-widest">
+      <span>SCROLL</span>
+      <div class="w-px h-16 bg-gradient-to-b from-cyan-400/40 to-transparent animate-pulse"></div>
+    </div>
+  </section>
+
+
+  <!-- ═══ SKILLS BENTO GRID ═══ -->
+  <section id="skills" class="py-32 px-6 bg-[#030a0e]">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="reveal mb-16">
+        <div class="text-xs text-cyan-500/60 tracking-[0.4em] uppercase mb-3 font-mono">// 02. SKILLS</div>
+        <h2 class="font-display text-4xl md:text-6xl font-black text-white">
+          Tools &amp; <span class="text-cyan-400 glow-blue">Arsenal</span>
+        </h2>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[160px]">
+
+        <!-- Large card: Python -->
+        <div class="bento-card card-glow col-span-2 row-span-2 bg-[#0a1628] p-8 flex flex-col justify-between reveal" data-delay="0">
+          <div>
+            <div class="text-6xl mb-6">🐍</div>
+            <h3 class="font-display text-3xl font-bold text-white mb-3">Python</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Pandas, NumPy, Scikit-learn. Membangun model deteksi anomali dan fraud scoring berbasis machine learning.</p>
+          </div>
+          <div class="flex gap-2 flex-wrap mt-4">
+            {['pandas', 'sklearn', 'numpy', 'matplotlib'].map(tag => (
+              <span class="px-2 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs">{tag}</span>
+            ))}
+          </div>
+        </div>
+
+        <!-- SQL -->
+        <div class="bento-card card-glow bg-[#0a1628] p-6 flex flex-col justify-between reveal" data-delay="100">
+          <div class="text-4xl">🗄️</div>
+          <div>
+            <h3 class="font-display text-xl font-bold text-white">SQL</h3>
+            <p class="text-slate-500 text-xs mt-1">PostgreSQL · MySQL · BigQuery</p>
+          </div>
+        </div>
+
+        <!-- Forensic Software -->
+        <div class="bento-card card-glow bg-[#0a1628] p-6 flex flex-col justify-between reveal" data-delay="150">
+          <div class="text-4xl">🔍</div>
+          <div>
+            <h3 class="font-display text-xl font-bold text-white">ACL / IDEA</h3>
+            <p class="text-slate-500 text-xs mt-1">Forensic audit tools</p>
+          </div>
+        </div>
+
+        <!-- Wide card: Power BI -->
+        <div class="bento-card card-glow col-span-2 bg-[#0a1628] p-6 flex items-center gap-6 reveal" data-delay="200">
+          <div class="text-5xl flex-shrink-0">📊</div>
+          <div>
+            <h3 class="font-display text-2xl font-bold text-white mb-1">Data Visualization</h3>
+            <p class="text-slate-400 text-sm">Power BI, Tableau, dan Excel Advanced untuk dashboard investigasi real-time.</p>
+          </div>
+        </div>
+
+        <!-- ML -->
+        <div class="bento-card card-glow bg-[#0a1628] p-6 flex flex-col justify-between reveal" style="border-color: rgba(255,34,68,0.2);" data-delay="250">
+          <div class="text-4xl">🤖</div>
+          <div>
+            <h3 class="font-display text-xl font-bold text-white">ML Models</h3>
+            <p class="text-slate-500 text-xs mt-1">Fraud detection AI</p>
+          </div>
+        </div>
+
+        <!-- OSINT -->
+        <div class="bento-card card-glow bg-[#0a1628] p-6 flex flex-col justify-between reveal" data-delay="300">
+          <div class="text-4xl">🌐</div>
+          <div>
+            <h3 class="font-display text-xl font-bold text-white">OSINT</h3>
+            <p class="text-slate-500 text-xs mt-1">Open source intelligence</p>
+          </div>
+        </div>
+
+        <!-- CFE Badge - wide -->
+        <div class="bento-card col-span-2 p-6 flex items-center gap-4 reveal" data-delay="350"
+          style="background: linear-gradient(135deg, #0a1628, #0d1f3c); border: 1px solid rgba(255,34,68,0.3);">
+          <div class="text-5xl">🏅</div>
+          <div>
+            <div class="text-xs text-red-400 tracking-widest mb-1 uppercase">Certified</div>
+            <h3 class="font-display text-2xl font-bold text-white">CFE</h3>
+            <p class="text-slate-400 text-sm">Certified Fraud Examiner — ACFE</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ TIMELINE EXPERIENCE ═══ -->
+  <section id="experience" class="py-32 px-6 relative" style="background: #04080f;">
+
+    <div class="max-w-4xl mx-auto">
+
+      <div class="reveal mb-16">
+        <div class="text-xs text-cyan-500/60 tracking-[0.4em] uppercase mb-3 font-mono">// 03. EXPERIENCE</div>
+        <h2 class="font-display text-4xl md:text-6xl font-black text-white">
+          Career <span class="text-cyan-400 glow-blue">Journey</span>
+        </h2>
+      </div>
+
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px timeline-line"></div>
+
+        {[
+          {
+            year: '2024 – Now',
+            title: 'Senior Fraud Investigator',
+            company: 'Tech Finance Corp',
+            desc: 'Memimpin tim investigasi kasus fraud senilai $5M+. Mengembangkan sistem deteksi otomatis berbasis ML dengan akurasi 94%.',
+            tags: ['ML Pipeline', 'Team Lead', 'Python'],
+            side: 'left',
+            color: 'cyan',
+          },
+          {
+            year: '2022 – 2024',
+            title: 'Fraud Analyst',
+            company: 'Digital Banking Inc',
+            desc: 'Menganalisis 500+ kasus fraud transaksi digital. Meningkatkan akurasi deteksi sebesar 40% dengan model baru.',
+            tags: ['SQL', 'Power BI', 'ACL'],
+            side: 'right',
+            color: 'blue',
+          },
+          {
+            year: '2020 – 2022',
+            title: 'Junior Investigator',
+            company: 'Financial Services Ltd',
+            desc: 'Investigasi kasus fraud manual, dokumentasi, dan analisis forensik. Meraih sertifikasi CFE (Certified Fraud Examiner).',
+            tags: ['CFE', 'Forensics', 'Excel'],
+            side: 'left',
+            color: 'purple',
+          },
+          {
+            year: '2018 – 2020',
+            title: 'Data Analyst',
+            company: 'Analytics Firm',
+            desc: 'Membangun fondasi analitik data dan SQL. Pengalaman pertama dengan fraud pattern detection dan statistical analysis.',
+            tags: ['SQL', 'Python', 'Tableau'],
+            side: 'right',
+            color: 'red',
+          },
+        ].map((exp, i) => (
+          <div class={`relative flex mb-16 ${exp.side === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+
+            <!-- Dot -->
+            <div class="absolute left-8 md:left-1/2 -translate-x-1/2 z-10 mt-6">
+              <div class="w-4 h-4 rounded-full border-2 border-[#04080f]"
+                style={`background: ${exp.color === 'cyan' ? '#00d4ff' : exp.color === 'blue' ? '#3b82f6' : exp.color === 'purple' ? '#a855f7' : '#ff2244'}`}>
+              </div>
+              <div class="absolute inset-0 rounded-full animate-ping opacity-30"
+                style={`background: ${exp.color === 'cyan' ? '#00d4ff' : exp.color === 'blue' ? '#3b82f6' : exp.color === 'purple' ? '#a855f7' : '#ff2244'}`}>
+              </div>
+            </div>
+
+            <!-- Card -->
+            <div class={`w-full md:w-[46%] ml-16 md:ml-0 ${exp.side === 'right' ? 'md:mr-auto md:pl-0 md:pr-12' : 'md:ml-auto md:pl-12'} reveal`} data-delay={i * 150}>
+              <div class="card-glow bg-[#0a1628] p-6 bento-card">
+                <div class="text-xs font-mono text-cyan-400/60 tracking-widest mb-2">{exp.year}</div>
+                <h3 class="font-display text-xl font-bold text-white mb-1">{exp.title}</h3>
+                <div class="text-sm mb-3" style="color: #00d4ff; opacity: 0.7;">{exp.company}</div>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">{exp.desc}</p>
+                <div class="flex gap-2 flex-wrap">
+                  {exp.tags.map(tag => (
+                    <span class="px-2 py-1 bg-white/5 border border-white/10 text-white/50 text-xs">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact" class="py-32 px-6 bg-[#030a0e] relative overflow-hidden">
+
+    <!-- Background glow -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div class="w-[600px] h-[600px] rounded-full blur-[150px] bg-cyan-500/5"></div>
+    </div>
+
+    <div class="max-w-3xl mx-auto relative z-10">
+
+      <div class="reveal text-center mb-16">
+        <div class="text-xs text-cyan-500/60 tracking-[0.4em] uppercase mb-3 font-mono">// 04. CONTACT</div>
+        <h2 class="font-display text-4xl md:text-6xl font-black text-white mb-4">
+          Let's <span class="text-cyan-400 glow-blue">Connect</span>
+        </h2>
+        <p class="text-slate-400 text-sm max-w-md mx-auto">
+          Tersedia untuk konsultasi investigasi, kolaborasi proyek, atau diskusi tentang fraud analytics.
+        </p>
+      </div>
+
+      <!-- Contact Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        {[
+          { icon: '📧', label: 'Email', value: 'investigator@example.com', href: 'mailto:investigator@example.com' },
+          { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/harkvyn', href: '#' },
+          { icon: '🐙', label: 'GitHub', value: 'github.com/Harkvyn', href: 'https://github.com/Harkvyn' },
+          { icon: '📱', label: 'WhatsApp', value: '+62 812-3456-7890', href: '#' },
+        ].map((c, i) => (
+          <a
+            href={c.href}
+            class="card-glow bento-card bg-[#0a1628] p-5 flex items-center gap-4 reveal no-underline"
+            data-delay={i * 100}
+          >
+            <div class="text-3xl flex-shrink-0">{c.icon}</div>
+            <div>
+              <div class="text-xs text-slate-500 tracking-widest uppercase mb-0.5">{c.label}</div>
+              <div class="text-cyan-400 font-mono text-sm">{c.value}</div>
+            </div>
+            <div class="ml-auto text-slate-600 text-sm">→</div>
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div class="reveal text-center" data-delay="400">
+        <a
+          href="#"
+          class="btn-shimmer inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-display font-black text-sm tracking-widest uppercase hover:from-cyan-400 hover:to-blue-500 transition-all duration-300"
+        >
+          <span>📄</span>
+          Download CV
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  // Scramble text effect
+  const el = document.getElementById('scramble-text');
+  if (el) {
+    const finalText = el.dataset.text || 'FRAUD INVESTIGATOR';
+    const chars = '!@#$%^&*<>?/|[]{}~`';
+    let iteration = 0;
+
+    const interval = setInterval(() => {
+      el.textContent = finalText
+        .split('')
+        .map((letter, index) => {
+          if (index < iteration) return finalText[index];
+          if (letter === ' ') return ' ';
+          return chars[Math.floor(Math.random() * chars.length)];
+        })
+        .join('');
+
+      if (iteration >= finalText.length) clearInterval(interval);
+      iteration += 0.4;
+    }, 35);
+  }
+</script>
